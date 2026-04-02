@@ -1,0 +1,12 @@
+[Unit]
+Description=Apply database migrations for shop_users
+After=postgresql@16-main.service
+Wants=postgresql@16-main.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/db-migrate.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

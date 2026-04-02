@@ -1,0 +1,11 @@
+[Unit]
+Description=Mount logs fs
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/mount.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
