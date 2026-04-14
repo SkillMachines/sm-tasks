@@ -1,0 +1,14 @@
+[Unit]
+Description=Backend API server 1 (port 8001)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/backends/backend1.py
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
